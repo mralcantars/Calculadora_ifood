@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Lucros</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="{{ url_for('index') }}">Início</a>
+        <a href="{{ url_for('explicacao') }}">Explicação</a>
+        <a href="{{ url_for('lucros') }}">Lucros</a>
+    </nav>
+
+    <div class="container">
+        <h1>Lucro por Produto</h1>
+        {% if historico %}
+            {% for item in historico %}
+            <div class="card">
+                <p><strong>Preço da loja:</strong> R$ {{item.preco_loja}}</p>
+                <p><strong>Custo total estimado:</strong> R$ {{ (item.preco_loja + item.entrega + item.campanha + item.cupom + (item.resultado * item.comissao)) | round(2) }}</p>
+                <p class="resultado-final"><strong>Lucro Liquído:</strong> R$ {{ item.lucro }}</p>
+            </div>
+            {% endfor %}
+        {% else %}
+            <p>Nenhum cálculo realizado ainda.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

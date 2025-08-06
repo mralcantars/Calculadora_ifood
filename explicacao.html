@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Explicação</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="{{ url_for('index') }}">Início</a>
+        <a href="{{ url_for('explicacao') }}">Explicação</a>
+        <a href="{{ url_for('lucros') }}">Lucros</a>
+    </nav>
+
+    <div class="container">
+        <h1>Como funciona a Calculadora?</h1>
+        <p>Sabemos que precificar corretamente é uma das maiores dores dos parceiros. Pensando nisso, desenvolvemos a Calculadora de Precificação com base nos conceitos do Expert iFood Magno Fernandes.</p>
+
+        <h2>Você precisa considerar:</h2>
+        <ul>
+            <li>Preço da loja (já com margem de lucro)</li>
+            <li>Comissão iFood (17% ou 28%)</li>
+            <li>Taxa de entrega média</li>
+            <li>Campanha inteligente (por pedido)</li>
+            <li>Cupons de desconto</li>
+        </ul>
+
+        <p>Com esses dados, a calculadora soma os custos e aplica a comissão, fornecendo um preço ideal para vender no iFood com lucro.</p>
+
+        <h2>Fórmula aplicada:</h2>
+        <pre>((Preço Loja + Entrega + Campanha) / (1 - Comissão)) + Cupom</pre>
+    </div>
+</body>
+</html>
